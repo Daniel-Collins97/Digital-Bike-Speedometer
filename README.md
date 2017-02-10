@@ -13,5 +13,6 @@
 * Breadboard
 * Wires
 * Buzzer
+* Internet Connectivity (Mobile's Hotspot)
 
 **Other Practical Skills needed:** Programming, Soldering, Web Development, Wiring, Digital Electronics, API sourcing and use, Maths.
