@@ -19,4 +19,39 @@
 
 **Other Practical Skills needed:** Programming, Soldering, Web Development, Wiring, Digital Electronics, Math.
 
+This is the code that updates the Speed and Distance variables for my project;
+
+```C
+void updateSpeedAndDistance()
+{
+  distance = tire_circumference * revolutions;
+  distance /= miles_in_inches;
+  float ipm = tire_circumference / (float)last_interval;
+  mph = ipm * k_ipm_2_mph;
+}
+```
+This is the code that prints the values to the LCD Screen;
+```C
+void loop()                                                  // Continuously loops over following code to update the variables "mph" and "distance"
+{
+  int hall_val = digitalRead(2);
+  if (hall_state != hall_val && hall_val == LOW)
+  {
+   revolutions++;
+   last_interval = millis()-last_fall;
+   last_fall = millis();
+ }
+
+ hall_state = hall_val;
+ updateSpeedAndDistance();                                   // Calls "updateSpeedAndDistance" function here
+
+ lcd.setCursor(0, 0);                                        // Sets Cursor to first row first column
+ lcd.print("Mph:");                                          // Prints "Mph" on screen
+ lcd.print(mph);                                       // Prints value for Mph on screen
+ lcd.setCursor(0, 1);                                        // Sets Cursor to first row second column
+ lcd.print("Miles:");                                        // Prints "Miles" on screen
+ lcd.print(distance);                                        // Prints value for distance on screen
+}
+```
+
 Daniel Collins 20076240
