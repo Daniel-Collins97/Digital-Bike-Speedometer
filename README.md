@@ -3,7 +3,7 @@
 
 **Description:** For my Digital Bike Speedometer, i have a Hall Effect Sensor connected to an LCD screen. The Hall Effect sensor should be connected to a static position on a bike near the wheel. Then, a Magnet should be attached to the wheel. When the magnet passes the Sensor, a value of High is received by the Arduino. The Code then uses the wheels diameter and the amount of revolutions to determine the speed and distance travelled of the bike. Then, it will print these values to the LCD screen.
 
-![Image of project](IMG_20170428_095430.jpg)
+![Image of project](InkedIMG_20170428_095430_LI.jpg)
 
 **Equipment needed:**
 * Arduino
